@@ -1,5 +1,6 @@
 import "./App.css";
 import profilePhoto from "./images/profile.jpeg";
+import { Analytics } from "@vercel/analytics/react";
 
 const navItems = ["About", "Skills", "Experience", "Projects", "Contact"];
 
@@ -282,6 +283,7 @@ function App() {
           </div>
         </section>
       </main>
+      <Analytics />
     </div>
   );
 }

@@ -94,7 +94,7 @@
   object-fit: contain;
   border-radius: 14px;
   box-shadow: 0 0 0 1px rgba(214, 174, 115, 0.2);
-  animation: logoOrbit 11s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+  animation: none;
 }
 
 .nav-links {
@@ -135,21 +135,24 @@
 
 .brand-name {
   display: inline-block;
-  font-size: clamp(2.2rem, 5vw, 4.3rem);
-  font-weight: 800;
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #f9f0e4;
   line-height: 0.95;
-  text-shadow: 0 8px 28px rgba(214, 174, 115, 0.18);
+  font-family: var(--display-font);
+  text-shadow: 0 8px 28px rgba(214, 174, 115, 0.14);
 }
 
 .brand-name::after {
   content: "✨";
   display: inline-block;
-  margin-left: 0.22em;
+  margin-left: 0.18em;
+  font-size: 0.52em;
+  vertical-align: super;
   transform-origin: center;
-  animation: sparklePulse 2.2s ease-in-out infinite;
+  animation: sparklePulse 2.8s ease-in-out infinite;
 }
 
 .hero {

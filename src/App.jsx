@@ -107,6 +107,14 @@ const projects = [
 function App() {
   return (
     <div className="portfolio">
+      <div className="brand-flow" aria-hidden="true">
+        <img src={logoMark} alt="" className="brand-mark brand-mark-1" />
+        <img src={logoMark} alt="" className="brand-mark brand-mark-2" />
+        <img src={logoMark} alt="" className="brand-mark brand-mark-3" />
+        <img src={logoMark} alt="" className="brand-mark brand-mark-4" />
+        <img src={logoMark} alt="" className="brand-mark brand-mark-5" />
+      </div>
+
       <header className="site-header">
         <nav className="navbar" aria-label="Main navigation">
           <div className="nav-logo">TUNDE SIMON ABIKOYE (OLUWADAMILARE)</div>

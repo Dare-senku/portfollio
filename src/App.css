@@ -1,7 +1,62 @@
 .portfolio {
+  position: relative;
   width: min(1200px, calc(100% - 32px));
   margin: 0 auto;
   padding-bottom: 90px;
+  isolation: isolate;
+}
+
+.brand-flow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.brand-mark {
+  position: absolute;
+  width: clamp(80px, 10vw, 150px);
+  border-radius: 18px;
+  opacity: 0.18;
+  filter: saturate(1.1) contrast(1.1) blur(0.2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  animation: brandWave 14s ease-in-out infinite alternate;
+}
+
+.brand-mark-1 {
+  top: 7%;
+  left: -2%;
+  transform: rotate(-18deg);
+  animation-delay: 0s;
+}
+
+.brand-mark-2 {
+  top: 18%;
+  right: 2%;
+  transform: rotate(16deg);
+  animation-delay: 1.2s;
+}
+
+.brand-mark-3 {
+  top: 48%;
+  left: 6%;
+  transform: rotate(-12deg);
+  animation-delay: 2.4s;
+}
+
+.brand-mark-4 {
+  top: 62%;
+  right: 8%;
+  transform: rotate(22deg);
+  animation-delay: 3.1s;
+}
+
+.brand-mark-5 {
+  bottom: 10%;
+  left: 40%;
+  transform: rotate(-8deg);
+  animation-delay: 4.3s;
 }
 
 .site-header {
@@ -457,6 +512,24 @@
   100% {
     opacity: 1;
     transform: scale(1.1);
+  }
+}
+
+@keyframes brandWave {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(-18deg) scale(0.96);
+  }
+  25% {
+    transform: translate3d(18px, -14px, 0) rotate(-8deg) scale(1);
+  }
+  50% {
+    transform: translate3d(-20px, 16px, 0) rotate(14deg) scale(1.04);
+  }
+  75% {
+    transform: translate3d(10px, -10px, 0) rotate(-4deg) scale(1.02);
+  }
+  100% {
+    transform: translate3d(-12px, 20px, 0) rotate(18deg) scale(0.98);
   }
 }
 

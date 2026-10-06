@@ -19,22 +19,28 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
   min-height: 80px;
+  flex-wrap: nowrap;
 }
 
 .nav-logo {
+  flex: 1 1 auto;
   font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #f4e8d7;
+  white-space: nowrap;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 1.5rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
 .nav-links a,
@@ -64,6 +70,43 @@
   align-items: center;
   gap: 2.2rem;
   padding: 5rem 0 3rem;
+}
+
+.hero-visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 480px;
+  isolation: isolate;
+  overflow: visible;
+}
+
+.hero-visual::before,
+.hero-visual::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-visual::before {
+  width: 280px;
+  height: 280px;
+  border: 1px solid rgba(214, 174, 115, 0.15);
+  right: 18px;
+  top: 40px;
+  animation: orbitRing 16s linear infinite;
+}
+
+.hero-visual::after {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(214, 174, 115, 0.14), transparent 62%);
+  right: 68px;
+  top: 88px;
+  filter: blur(10px);
+  animation: glowPulse 9s ease-in-out infinite alternate;
 }
 
 .hero-content {
@@ -153,6 +196,9 @@
   box-shadow: 0 25px 60px rgba(12, 8, 6, 0.6);
   position: relative;
   overflow: hidden;
+  animation: cardDrift 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+  transform-origin: center center;
+  z-index: 1;
 }
 
 .hero-card::before {
@@ -161,6 +207,31 @@
   inset: 0;
   background: radial-gradient(circle at top, rgba(214, 174, 115, 0.16), transparent 45%);
   pointer-events: none;
+}
+
+.floating-logo-wrap {
+  position: absolute;
+  top: 10px;
+  right: -18px;
+  width: 118px;
+  aspect-ratio: 1;
+  border-radius: 34% 66% 57% 43% / 50% 40% 60% 50%;
+  background: rgba(18, 13, 11, 0.76);
+  border: 1px solid rgba(214, 174, 115, 0.38);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.26), 0 0 0 8px rgba(214, 174, 115, 0.06);
+  padding: 0.55rem;
+  z-index: 3;
+  animation: logoOrbit 11s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+  transform-origin: center center;
+}
+
+.floating-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 28% 72% 63% 37% / 45% 48% 52% 55%;
+  display: block;
+  filter: saturate(1.15) contrast(1.05);
 }
 
 .card-top {
@@ -333,6 +404,62 @@
   background: rgba(255, 255, 255, 0.02);
 }
 
+@keyframes cardDrift {
+  0% {
+    transform: translateY(0) rotate(-1.8deg) scale(1);
+  }
+  30% {
+    transform: translateY(-12px) rotate(1.2deg) scale(1.01);
+  }
+  60% {
+    transform: translateY(10px) rotate(-0.6deg) scale(1.012);
+  }
+  100% {
+    transform: translateY(-6px) rotate(1.8deg) scale(1.008);
+  }
+}
+
+@keyframes logoOrbit {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(-12deg) scale(1);
+  }
+  25% {
+    transform: translate3d(-10px, 10px, 0) rotate(5deg) scale(1.02);
+  }
+  50% {
+    transform: translate3d(14px, 14px, 0) rotate(18deg) scale(1.04);
+  }
+  75% {
+    transform: translate3d(-8px, -9px, 0) rotate(-8deg) scale(1.03);
+  }
+  100% {
+    transform: translate3d(10px, 8px, 0) rotate(12deg) scale(1.01);
+  }
+}
+
+@keyframes orbitRing {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.08);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
 @media (max-width: 900px) {
   .hero,
   .about-grid,
@@ -343,6 +470,16 @@
 
   .hero {
     padding-top: 3rem;
+  }
+
+  .hero-visual {
+    min-height: 420px;
+  }
+
+  .floating-logo-wrap {
+    width: 96px;
+    right: 10px;
+    top: 0;
   }
 
   .dark-section {
@@ -357,20 +494,45 @@
 
   .navbar {
     width: min(100% - 20px, 1200px);
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.8rem;
-    padding: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    padding: 0.9rem 0;
+    flex-wrap: nowrap;
   }
 
   .nav-logo {
-    letter-spacing: 0.12em;
-    font-size: 0.9rem;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    letter-spacing: 0.08em;
+    font-size: 0.68rem;
   }
 
   .nav-links {
-    justify-content: center;
-    gap: 0.9rem;
+    flex-shrink: 0;
+    justify-content: flex-end;
+    gap: 0.65rem;
+    white-space: nowrap;
+  }
+
+  .nav-links a {
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+  }
+
+  .hero-visual {
+    min-height: 350px;
+  }
+
+  .floating-logo-wrap {
+    width: 74px;
+    right: 4px;
+    top: 6px;
   }
 
   .hero-buttons,

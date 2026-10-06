@@ -1,5 +1,6 @@
 import "./App.css";
 import profilePhoto from "./images/profile.jpeg";
+import logoMark from "./images/Dare Senku Logo.jpeg";
 
 const navItems = ["About", "Skills", "Experience", "Projects", "Contact"];
 
@@ -152,21 +153,31 @@ function App() {
             </div>
           </div>
 
-          <div className="hero-card">
-            <div className="card-top">
-              <span>PROFILE</span>
-              <span>01</span>
+          <div className="hero-visual">
+            <div className="floating-logo-wrap">
+              <img
+                src={logoMark}
+                alt="Dare Senku logo"
+                className="floating-logo"
+              />
             </div>
 
-            <img
-              src={profilePhoto}
-              alt="Dare Senku"
-              className="profile-photo"
-            />
+            <div className="hero-card">
+              <div className="card-top">
+                <span>PROFILE</span>
+                <span>01</span>
+              </div>
 
-            <h3>Technology &amp; Digital Operations</h3>
+              <img
+                src={profilePhoto}
+                alt="Dare Senku"
+                className="profile-photo"
+              />
 
-            <p>AI • Frontend • Cybersecurity • Data • Customer Experience</p>
+              <h3>Technology &amp; Digital Operations</h3>
+
+              <p>AI • Frontend • Cybersecurity • Data • Customer Experience</p>
+            </div>
           </div>
         </section>
 

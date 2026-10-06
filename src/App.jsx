@@ -117,7 +117,9 @@ function App() {
 
       <header className="site-header">
         <nav className="navbar" aria-label="Main navigation">
-          <div className="nav-logo">DARE SENKU</div>
+          <div className="nav-logo" aria-label="Dare Senku logo">
+            <img src={logoMark} alt="Dare Senku logo" className="nav-brand-mark" />
+          </div>
 
           <div className="nav-links">
             {navItems.map((item) => (
@@ -128,6 +130,10 @@ function App() {
           </div>
         </nav>
       </header>
+
+      <div className="brand-name-wrap">
+        <span className="brand-name">DARE SENKU ✨</span>
+      </div>
 
       <main>
         <section className="hero">

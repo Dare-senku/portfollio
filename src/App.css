@@ -708,7 +708,7 @@
     border-top: 1px solid rgba(214, 174, 115, 0.14);
     border-bottom: 1px solid rgba(214, 174, 115, 0.14);
     padding: 0.75rem 0 0.9rem;
-    overflow: hidden;
+    overflow: visible;
     position: relative;
     z-index: 1;
   }
@@ -728,6 +728,8 @@
     scrollbar-width: none;
     background: #120d0b;
     padding: 0 0.15rem 0.15rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .mobile-nav-links::-webkit-scrollbar {

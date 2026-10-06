@@ -117,7 +117,7 @@ function App() {
 
       <header className="site-header">
         <nav className="navbar" aria-label="Main navigation">
-          <div className="nav-logo">TUNDE SIMON ABIKOYE (OLUWADAMILARE)</div>
+          <div className="nav-logo">DARE SENKU</div>
 
           <div className="nav-links">
             {navItems.map((item) => (

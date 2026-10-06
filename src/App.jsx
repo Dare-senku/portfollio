@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import profilePhoto from "./images/profile.jpeg";
 import logoMark from "./images/Dare Senku Logo.jpeg";
@@ -105,6 +106,8 @@ const projects = [
 ];
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <div className="portfolio">
       <div className="brand-flow" aria-hidden="true">
@@ -121,7 +124,19 @@ function App() {
             <img src={logoMark} alt="Dare Senku logo" className="nav-brand-mark" />
           </div>
 
-          <div className="nav-links">
+          <button
+            type="button"
+            className={`nav-toggle ${isMenuOpen ? "is-open" : ""}`}
+            aria-label="Toggle navigation"
+            aria-expanded={isMenuOpen}
+            onClick={() => setIsMenuOpen((open) => !open)}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div className="nav-links desktop-nav-links">
             {navItems.map((item) => (
               <a key={item} href={`#${item.toLowerCase()}`}>
                 {item}
@@ -129,6 +144,16 @@ function App() {
             ))}
           </div>
         </nav>
+
+        <div className={`mobile-nav ${isMenuOpen ? "is-open" : ""}`}>
+          <div className="nav-links mobile-nav-links">
+            {navItems.map((item) => (
+              <a key={item} href={`#${item.toLowerCase()}`}>
+                {item}
+              </a>
+            ))}
+          </div>
+        </div>
       </header>
 
       <div className="brand-name-wrap">

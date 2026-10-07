@@ -138,7 +138,11 @@ function App() {
 
           <div className="nav-links desktop-nav-links">
             {navItems.map((item) => (
-              <a key={item} href={`#${item.toLowerCase()}`}>
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
                 {item}
               </a>
             ))}
@@ -148,7 +152,11 @@ function App() {
         <div className={`mobile-nav ${isMenuOpen ? "is-open" : ""}`}>
           <div className="nav-links mobile-nav-links">
             {navItems.map((item) => (
-              <a key={item} href={`#${item.toLowerCase()}`}>
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
                 {item}
               </a>
             ))}

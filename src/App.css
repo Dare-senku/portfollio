@@ -627,24 +627,32 @@
   }
 
   .site-header {
-    background: #120d0b;
-    border-bottom: 1px solid rgba(214, 174, 115, 0.18);
+    position: sticky;
+    top: 12px;
+    z-index: 30;
+    background: transparent;
+    border: none;
+    padding: 0 10px;
   }
 
   .navbar {
-    width: min(100% - 20px, 1200px);
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     gap: 0.6rem;
-    padding: 0.85rem 0;
+    padding: 0.7rem 0.8rem;
     min-height: 64px;
     flex-wrap: nowrap;
-    background: #120d0b;
+    background: rgba(18, 13, 11, 0.78);
+    border: 1px solid rgba(214, 174, 115, 0.3);
+    border-radius: 999px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.26);
     overflow: visible;
     position: relative;
     z-index: 2;
+    backdrop-filter: blur(10px);
   }
 
   .nav-logo {
@@ -656,6 +664,7 @@
 
   .nav-brand-mark {
     width: 52px;
+    border-radius: 16px;
   }
 
   .desktop-nav-links {
@@ -671,12 +680,13 @@
     width: 2.7rem;
     height: 2.7rem;
     padding: 0.45rem;
-    border: 1px solid rgba(214, 174, 115, 0.28);
-    background: rgba(39, 29, 24, 0.9);
-    border-radius: 12px;
+    border: 1px solid rgba(214, 174, 115, 0.3);
+    background: rgba(39, 29, 24, 0.88);
+    border-radius: 999px;
     cursor: pointer;
     flex-shrink: 0;
     transition: all 0.25s ease;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
   }
 
   .nav-toggle span {
@@ -702,15 +712,16 @@
 
   .mobile-nav {
     display: none;
-    width: min(100% - 20px, 1200px);
-    margin: 0 auto;
-    background: #120d0b;
-    border-top: 1px solid rgba(214, 174, 115, 0.14);
-    border-bottom: 1px solid rgba(214, 174, 115, 0.14);
+    width: calc(100% - 20px);
+    margin: 0.7rem auto 0;
+    background: rgba(18, 13, 11, 0.78);
+    border: 1px solid rgba(214, 174, 115, 0.3);
+    border-radius: 20px;
     padding: 0.35rem 0 0.5rem;
-    overflow: visible;
+    overflow: hidden;
     position: relative;
     z-index: 1;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
   }
 
   .mobile-nav.is-open {
@@ -722,7 +733,7 @@
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    background: #120d0b;
+    background: rgba(18, 13, 11, 0.78);
     padding: 0;
     width: 100%;
     box-sizing: border-box;
@@ -748,11 +759,16 @@
   .brand-name-wrap {
     width: min(100% - 20px, 1200px);
     padding-top: 0.5rem;
+    margin-top: 0.8rem;
   }
 
   .brand-name {
     font-size: clamp(1.8rem, 9vw, 2.8rem);
     letter-spacing: 0.06em;
+  }
+
+  .hero {
+    padding-top: 1.5rem;
   }
 
   .hero-visual {

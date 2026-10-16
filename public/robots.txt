@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ts-dare-senku-portfolio.vercel.app/sitemap.xml

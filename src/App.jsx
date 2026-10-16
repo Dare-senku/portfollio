@@ -174,14 +174,14 @@ function App() {
             <p className="eyebrow">TECHNOLOGY • DATA • DIGITAL PRODUCTS</p>
 
             <h1>
-              Building useful technology
-              <span> with purpose.</span>
+              Website designer in Nigeria
+              <span> for people with purpose.</span>
             </h1>
 
             <p className="hero-description">
-              I&apos;m a multidisciplinary technology professional developing
-              practical skills across AI data work, frontend development,
-              cybersecurity, data operations, and digital products.
+              I create elegant, responsive websites and professional portfolios
+              for individuals, freelancers, startups, and businesses in Nigeria.
+              Each site is shaped around its audience, goals, and story.
             </p>
 
             <div className="hero-buttons">
@@ -217,7 +217,7 @@ function App() {
 
               <img
                 src={profilePhoto}
-                alt="Dare Senku"
+                alt="Portrait of Dare Senku, website designer in Nigeria"
                 className="profile-photo"
               />
 
@@ -234,30 +234,29 @@ function App() {
           <div className="about-grid">
             <div>
               <h2>
-                Curious by nature.
+                Professional portfolio design.
                 <br />
-                Practical by approach.
+                Thoughtful by approach.
               </h2>
             </div>
 
             <div className="about-text">
               <p>
-                I am a technology-focused professional with experience working
-                across customer-facing operations, digital workflows, technical
-                learning, and software development.
+                I design professional portfolios and business websites that
+                help people and organisations present their work clearly
+                online.
               </p>
 
               <p>
-                My background has taught me how to work with people, understand
-                operational problems, communicate clearly, learn quickly, and
-                turn ideas into practical solutions.
+                I bring a practical, user-focused approach to each website,
+                balancing clear communication, thoughtful design, and responsive
+                frontend development.
               </p>
 
               <p>
-                I am currently expanding my capabilities across artificial
-                intelligence, data annotation and evaluation, frontend
-                engineering, cybersecurity, networking, and digital product
-                development.
+                From a personal portfolio to a business website, I work with
+                individuals, freelancers, startups, and businesses in Nigeria
+                to shape their online presence around their goals.
               </p>
 
               <p>
